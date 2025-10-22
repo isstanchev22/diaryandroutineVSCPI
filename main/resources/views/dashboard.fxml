@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="app.controllers.DashboardController">
+    <top>
+        <HBox spacing="12" padding="12">
+            <Label fx:id="welcomeLabel" styleClass="title"/>
+            <Button text="Refresh" onAction="#refreshData" />
+        </HBox>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.5">
+            <items>
+                <VBox spacing="8" padding="12">
+                    <Label text="Diary entries" styleClass="section"/>
+                    <ListView fx:id="diaryList" prefHeight="400" />
+                    <HBox spacing="8">
+                        <Button text="New" onAction="#onNewEntry" />
+                        <Button text="Edit" onAction="#onEditEntry" />
+                        <Button text="Delete" onAction="#onDeleteEntry" />
+                    </HBox>
+                </VBox>
+                <VBox spacing="8" padding="12">
+                    <Label text="Routines" styleClass="section"/>
+                    <ListView fx:id="routineList" prefHeight="400" />
+                    <HBox spacing="8">
+                        <TextField fx:id="newRoutineField" promptText="New routine task" HBox.hgrow="ALWAYS"/>
+                        <Button text="Add" onAction="#onAddRoutine" />
+                    </HBox>
+                    <HBox spacing="8">
+                        <Button text="Toggle Done" onAction="#onToggleRoutine" />
+                        <Button text="Delete" onAction="#onDeleteRoutine" />
+                    </HBox>
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>

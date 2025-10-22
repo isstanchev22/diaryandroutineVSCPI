@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="app.controllers.DiaryController">
+    <top>
+        <VBox padding="12" spacing="6">
+            <Label text="Diary entry" styleClass="section"/>
+            <TextField fx:id="titleField" promptText="Title" />
+        </VBox>
+    </top>
+    <center>
+        <TextArea fx:id="contentArea" promptText="Write your thoughts…" BorderPane.alignment="CENTER" />
+    </center>
+    <bottom>
+        <HBox padding="12" alignment="CENTER_RIGHT" spacing="8">
+            <Button fx:id="saveBtn" text="Save" onAction="#onSave" />
+        </HBox>
+    </bottom>
+</BorderPane>
